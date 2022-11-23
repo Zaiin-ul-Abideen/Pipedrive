@@ -1,0 +1,26 @@
+{
+  "name": "pipedrive",
+  "version": "1.0.0",
+  "description": "**Requirements:**\r - Node version v16.17.0\r - Serverless package required globally",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:frontend": "cd frontend && npm install --legacy-peer-deps",
+    "install:backend": "cd backend && npm install",
+    "install:all": "npm install concurrently && npm run install:frontend && npm run install:backend",
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamZaiin/Pipedrive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamZaiin/Pipedrive/issues"
+  },
+  "homepage": "https://github.com/iamZaiin/Pipedrive#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
