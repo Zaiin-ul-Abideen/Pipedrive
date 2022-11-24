@@ -59,8 +59,8 @@ const Form = () => {
       const getDate =
         date!.month() + 1 + "/" + date!.date() + "/" + date!.year();
 
-      const finalFormData = {
-        currency: values.currency,
+      const dealData = {
+        currency: values.currency?.toUpperCase(),
         org_id: values.org_id,
         person_id: parseInt(values.person_id as string) || 0,
         probability: parseInt(values.probability as string) || 0,
@@ -71,7 +71,7 @@ const Form = () => {
         expected_close_date: getDate,
       };
 
-      if (await postFormData(finalFormData, "/dev/deals")) {
+      if (await postFormData(dealData, "/dev/deals")) {
         setShowSuccessAlert(true);
         resetForm({ values: initialFormValues });
       } else {
