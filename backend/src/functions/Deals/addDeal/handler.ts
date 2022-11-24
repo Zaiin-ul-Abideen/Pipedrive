@@ -39,10 +39,12 @@ const addDeal: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     const addDeal = await apiInstance.addDeal(opts);
     return formatJSONResponse({
       Deal: addDeal,
+      status: 200,
     });
   } catch (error) {
     return formatJSONResponse({
       error: error,
+      status: 500,
     });
   }
 };
