@@ -118,6 +118,7 @@ const Form = () => {
               <Grid item xs={12} sm={6} lg={6} xl={6}>
                 <TextField
                   fullWidth
+                  inputProps={{ style: { textTransform: "uppercase" } }}
                   type="text"
                   name="currency"
                   variant="outlined"
